@@ -31,7 +31,7 @@ cax2.xaxis.set_ticks_position('top')
 cbar.ax.tick_params(labelsize=14)
 
 #plt.tight_layout()
-#plt.savefig('ppgal-time.png',dpi=200)
+plt.savefig('ppgal-time.pdf',dpi=200)
 #plt.show()
 plt.close('all')
 
