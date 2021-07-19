@@ -16,7 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
-from mpl_toolkits.axes_grid1.colorbar import colorbar
+#import matplotlib.colorbar as colorbar
 import matplotlib.patheffects as PathEffects
 
 __author__ = 'Taylor Hutchison'
@@ -55,7 +55,7 @@ plt.gca().tick_params(labelsize=14)
 ax = plt.gca()
 ax_divider = make_axes_locatable(ax)
 cax2 = ax_divider.append_axes('top',pad='2.5%',size='5%')
-cbar = colorbar(im,cax=cax2,orientation="horizontal")
+cbar = plt.colorbar(im,cax=cax2,orientation="horizontal")
 cbar.ax.set_xlabel('gallons',labelpad=-54,fontsize=15)
 cax2.xaxis.set_ticks_position('top')    
 cbar.ax.tick_params(labelsize=14)
