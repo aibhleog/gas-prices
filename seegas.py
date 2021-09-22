@@ -18,6 +18,7 @@ import pandas as pd
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
 #import matplotlib.colorbar as colorbar
 import matplotlib.patheffects as PathEffects
+import matplotlib.dates as md
 
 __author__ = 'Taylor Hutchison'
 __email__ = 'aibhleog@tamu.edu'
@@ -27,6 +28,8 @@ df = pd.read_csv('gasforcar')
 
 # making figure
 plt.figure(figsize=(13,6))
+ax = plt.gca()
+
 dates = [pd.to_datetime(d) for d in df.date] # converting to datetime object
 
 # - moving average - #
@@ -43,16 +46,22 @@ running_med = moving_average(df['ppgal'][np.isfinite(df.ppgal.values)].values)
 im = plt.scatter(dates,df.ppgal,c=df.gallons,cmap=plt.cm.viridis,\
 	edgecolor='k',s=100,alpha=0.8)
 plt.gcf().autofmt_xdate()
-plt.plot(dates[1:-2],running_med,ls=':',lw=2.5,label='moving average',zorder=0)
+ax.plot(dates[1:-2],running_med,ls=':',lw=2.5,label='moving average',zorder=0)
 
-txt = plt.text(0.03,0.07,'Gas Prices in Texas',transform=plt.gca().transAxes,fontsize=17)
+txt = ax.text(0.03,0.07,'Gas Prices in Texas',transform=ax.transAxes,fontsize=17)
 txt.set_path_effects([PathEffects.withStroke(linewidth=0.4, foreground='k')])
 
-plt.xlabel('date of purchase',fontsize=15,labelpad=12)
-plt.ylabel('price per gallon',fontsize=15,labelpad=10)
-plt.gca().tick_params(labelsize=14)
+ax.set_xlabel('date of purchase',fontsize=15,labelpad=12)
+ax.set_ylabel('price per gallon',fontsize=15,labelpad=10)
+ax.tick_params(labelsize=14)
 
-ax = plt.gca()
+# setting up xaxis
+interval = 120 # days
+ax.xaxis.set_major_formatter(md.DateFormatter('%Y-%m'))
+ax.xaxis.set_major_locator(md.DayLocator(interval=interval)) # interval is in days
+ax.minorticks_on()
+
+# color bar!
 ax_divider = make_axes_locatable(ax)
 cax2 = ax_divider.append_axes('top',pad='2.5%',size='5%')
 cbar = plt.colorbar(im,cax=cax2,orientation="horizontal")
