@@ -1,5 +1,5 @@
 # gas-prices
-Just some code I've written to track gas prices in Texas since I purchased my car in 2017. 
+Just some code I've written to track gas prices in Texas since I purchased my car in 2017.  Now that I've moved to work at NASA Goddard in Maryland, I've updated it to show the gas for either state!
 
 
 ### thought
@@ -7,8 +7,8 @@ Just some code I've written to track gas prices in Texas since I purchased my ca
 
 
 .  
-Here's the price-per-gallon as a function of time:
-![ppgal vs time](ppgal-time.png)
+Here's the price-per-gallon as a function of time for Texas:  
+![ppgal vs time](ppgal-time-TX.png)
 
-For comparison, here's the current [gasbuddy chart](https://www.gasbuddy.com/charts) showing the rates for College Station, Austin, and the USA average covering the same time period:
-![gasbuddy chart](gasbuddy_pricingchart.png)
+For comparison, here's the current [gasbuddy chart](https://www.gasbuddy.com/charts) showing the rates for College Station, Austin, and the USA average covering the same time period:  
+![gasbuddy chart](gasbuddy_pricingchart-TX.png)
