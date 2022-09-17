@@ -1,0 +1,6 @@
+date,ppgal,gallons,price,location
+2022-08-08,4.039,2.030,8.200,"shell, DC"
+2022-08-16,4.159,3.025,12.590,"shell, college park"
+2022-08-22,3.799,2.910,11.060,"shell, college park"
+2022-09-04,3.559,2.902,10.330,"7-eleven, laurel"
+2022-09-16,3.599,2.818,10.140,"shell, greenbelt"
