@@ -27,7 +27,7 @@ __email__ = 'aibhleog@tamu.edu'
 
 
 # places this car has lived
-maryland = { 'y1': 0.14, 'y2': 0.07, 'interval': 5, 'interval_format':'%m-%d' }
+maryland = { 'y1': 0.14, 'y2': 0.07, 'interval': 30, 'interval_format':'%Y-%m' }
 texas = { 'y1': 0.885, 'y2': 0.8, 'interval': 120, 'interval_format':'%Y-%m' }
 places = { 'TX': texas, 'MD': maryland }
 
@@ -89,7 +89,7 @@ cbar.ax.tick_params(labelsize=14)
 
 #plt.tight_layout()
 plt.savefig(f'ppgal-time-{state}.png')
-#plt.show()
+# plt.show()
 plt.close('all')
 
 
